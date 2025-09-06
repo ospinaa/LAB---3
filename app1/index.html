@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store - Cliente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛍️ Fashion Store</h1>
+            <p>Encuentra la ropa perfecta para ti</p>
+        </div>
+        
+        <!-- Login Section -->
+        <div id="loginSection" class="content">
+            <div class="login-form">
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn">Iniciar Sesión</button>
+                </form>
+                <div style="margin-top: 20px; text-align: center;">
+                    <p><strong>Credenciales de prueba:</strong></p>
+                    <p>Email: consumidor@test.com</p>
+                    <p>Contraseña: 123</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main App Section -->
+        <div id="appSection" class="content hidden">
+            <div class="nav">
+                <button id="storesBtn" class="active">Tiendas</button>
+                <button id="cartBtn">Mi Carrito</button>
+                <button id="ordersBtn">Mis Órdenes</button>
+                <button id="logoutBtn" style="float: right; background: #e74c3c;">Cerrar Sesión</button>
+            </div>
+            
+            <div id="alertContainer"></div>
+            
+            <!-- Stores Section -->
+            <div id="storesSection">
+                <h2>Nuestras Tiendas</h2>
+                <div id="storesList" class="store-card"></div>
+            </div>
+            
+            <!-- Store Products Section -->
+            <div id="storeProductsSection" class="hidden">
+                <button id="backToStoresBtn" class="btn" style="margin-bottom: 20px;">← Volver a Tiendas</button>
+                <h2 id="storeName"></h2>
+                <div id="productsList" class="product-card"></div>
+            </div>
+            
+            <!-- Cart Section -->
+            <div id="cartSection" class="hidden">
+                <h2>Mi Carrito</h2>
+                <div id="cartItems"></div>
+                <div id="cartTotal" style="text-align: right; font-size: 18px; font-weight: bold; margin-top: 20px;"></div>
+                <button id="checkoutBtn" class="btn btn-success" style="margin-top: 20px; display: none;">Proceder al Pago</button>
+            </div>
+            
+            <!-- Checkout Section -->
+            <div id="checkoutSection" class="hidden">
+                <button id="backToCartBtn" class="btn" style="margin-bottom: 20px;">← Volver al Carrito</button>
+                <h2>Finalizar Compra</h2>
+                <div class="card">
+                    <h3>Resumen del Pedido</h3>
+                    <div id="checkoutItems"></div>
+                    <div id="checkoutTotal" style="text-align: right; font-size: 18px; font-weight: bold; margin-top: 20px;"></div>
+                </div>
+                <form id="checkoutForm" class="card">
+                    <h3>Información de Entrega</h3>
+                    <div class="form-group">
+                        <label for="paymentMethod">Método de Pago:</label>
+                        <select id="paymentMethod" required>
+                            <option value="cash">Efectivo</option>
+                            <option value="card">Tarjeta</option>
+                            <option value="transfer">Transferencia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Dirección de Entrega:</label>
+                        <input type="text" id="address" required placeholder="Ingresa tu dirección completa">
+                    </div>
+                    <button type="submit" class="btn btn-success">Crear Orden</button>
+                </form>
+            </div>
+            
+            <!-- Orders Section -->
+            <div id="ordersSection" class="hidden">
+                <h2>Mis Órdenes</h2>
+                <div id="ordersList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
